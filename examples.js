@@ -14,7 +14,8 @@ SharePoint what content type to use.
 
 When creating the item metadata include what fields you want to modify outside of the __metadata property. 
 
-All fields with a space in the name need to be reformatted to use _x0020_ for the space. Eq 'Some Column' = Some_x0020_Column
+All fields with a space in the name need to be reformatted to use _x0020_ for the space. 
+Eq 'Some Column' = Some_x0020_Column
 */
 var addItemWithFile = function () {
     //our sharepoint config
@@ -44,7 +45,8 @@ var addItemWithFile = function () {
             };
             
             //pass the file stream into the uploadDocumentAttach method
-            //uploadDocumentAttach(list, fileName, stream, overwrite, newItem) - If you want to rename the file, enter the new name for the fileName arg
+            //uploadDocumentAttach(list, fileName, stream, overwrite, newItem) - If you want to rename the file, 
+            //enter the new name for the fileName arg
             sp.uploadDocumentAttach(list, file, data, true, item).then(function (result) {
                 //do something with the results
                 console.log(result);
