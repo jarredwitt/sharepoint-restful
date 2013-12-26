@@ -2,6 +2,46 @@ var SharePoint = require('./lib/SharePoint');
 var fs = require('fs');
 var uuid = require('node-uuid');
 
+var buildSharePoint = function(){
+    //our sharepoint config
+    var sp = new SharePoint({
+        site: 'site',
+        user: 'domain\\user',
+        pass: 'password'
+    });
+    
+    return sp;
+}
+
+/*
+The following shows how to get information for a list. Returns all information available for the list.
+*/
+var getListInfo = function(){
+    var list = '';//title of the list
+    var sp = buildSharePoint();
+    
+    sp.getListInfoByTitle(list).then(function(result){
+        console.log(result);
+    }, function(err){
+        console.log(err); 
+    });
+};
+
+/*
+The following shows how to get all items in a list. Returns all information available for each item.
+*/
+var getListItems = function(){
+    var list = '';//title of the list
+    var sp = buildSharePoint();
+    
+    sp.getListItemsByTitle(list).then(function(result){
+        console.log(result);
+    }, function(err){
+        console.log(err); 
+    });
+};
+
+
 /*
 The following example shows how to upload a file to a sharepoint document library with metadata attached. 
 
@@ -16,13 +56,8 @@ When creating the item metadata include what fields you want to modify outside o
 
 All fields with a space in the name need to be reformatted to use _x0020_ for the space. Eq 'Some Column' = Some_x0020_Column
 */
-var addItemWithFile = function () {
-    //our sharepoint config
-    var sp = new SharePoint({
-        site: 'site',
-        user: 'user',
-        pass: 'password'
-    });
+var addItemWithFile = function () {    
+    var sp = buildSharePoint();
     
     //file to upload
     var file = 'path to your file';
@@ -57,7 +92,4 @@ var addItemWithFile = function () {
             console.log(err);
         });
     });   
-        
 };
-
-addItemWithFile();
