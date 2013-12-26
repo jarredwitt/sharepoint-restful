@@ -1,0 +1,25 @@
+{
+  "name": "SharePoint-RESTful",
+  "preferGlobal": true,
+  "version": "0.0.1",
+  "author": "Jarred Witt",
+  "description": "a simple sharepoint REST api helper",
+  "bin": {},
+  "scripts": {},
+  "main": "./lib/SharePoint",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "dependencies": {},
+  "analyze": false,
+  "devDependencies": {
+    "rsvp": "~2.0.4",
+    "require": "~0.5.0",
+    "request": "~2.30.0",
+    "node-uuid": "~1.4.1"
+  },
+  "bundledDependencies": [],
+  "license": "MIT"
+}
