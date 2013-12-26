@@ -25,7 +25,7 @@ var addItemWithFile = function () {
     });
     
     //file to upload
-    var file = 'file.pdf';
+    var file = 'path to your file';
     
     //list title
     var list = 'my list title';
