@@ -1,17 +1,33 @@
 var SharePoint = require('./lib/SharePoint');
+var config = require('./config');
 var fs = require('fs');
 var uuid = require('node-uuid');
 
 var buildSharePoint = function(){
     //our sharepoint config
     var sp = new SharePoint({
-        site: 'site',
-        user: 'domain\\user',
-        pass: 'password'
+        site: config.site,
+        user: config.user,
+        pass: config.password
     });
     
     return sp;
 }
+
+/*
+The following shows how to get all the lists from the sharepoint site and print the title to the command prompt
+*/
+var getAllLists = function(){
+    var sp = buildSharePoint();
+
+    sp.getAllLists().then(function(result){
+        result.results.forEach(function(r){
+            console.log(r.Title); 
+        });
+    }, function(err){
+        console.log(err); 
+    });
+};
 
 /*
 The following shows how to get information for a list. Returns all information available for the list.
