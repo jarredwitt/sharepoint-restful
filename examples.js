@@ -57,6 +57,23 @@ var getListItems = function(){
     });
 };
 
+/*
+The following shows how to get all the content types from a specifiec list
+*/
+
+var getContentTypes = function(list){
+    var sp = buildSharePoint();
+    
+    sp.getContentTypes(list).then(function(result){
+        result.results.forEach(function(r){
+            console.log(r.Name); 
+            console.log(r.StringId);
+        });
+    }, function(err){
+        console.log(err); 
+    });
+}
+getContentTypes('invoices');
 
 /*
 The following example shows how to upload a file to a sharepoint document library with metadata attached. 
