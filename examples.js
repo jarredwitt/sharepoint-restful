@@ -2,6 +2,7 @@ var SharePoint = require('./lib/SharePoint');
 var config = require('./config');
 var fs = require('fs');
 var uuid = require('node-uuid');
+var parse = require('jsonml').parse;
 
 var buildSharePoint = function(){
     //our sharepoint config
@@ -20,10 +21,8 @@ The following shows how to get all the lists from the sharepoint site and print 
 var getAllLists = function(){
     var sp = buildSharePoint();
 
-    sp.getAllLists().then(function(result){
-        result.results.forEach(function(r){
-            console.log(r.Title); 
-        });
+    sp.getAllLists(['Title', 'ItemCount', 'Id']).then(function(result){
+        console.log(result);
     }, function(err){
         console.log(err); 
     });
@@ -32,8 +31,7 @@ var getAllLists = function(){
 /*
 The following shows how to get information for a list. Returns all information available for the list.
 */
-var getListInfo = function(){
-    var list = '';//title of the list
+var getListInfo = function(list){
     var sp = buildSharePoint();
     
     sp.getListInfoByTitle(list).then(function(result){
@@ -46,11 +44,10 @@ var getListInfo = function(){
 /*
 The following shows how to get all items in a list. Returns all information available for each item.
 */
-var getListItems = function(){
-    var list = '';//title of the list
+var getListItems = function(list){
     var sp = buildSharePoint();
     
-    sp.getListItemsByTitle(list).then(function(result){
+    sp.getListItems(list, ['Bolo_x0020_Id']).then(function(result){
         console.log(result);
     }, function(err){
         console.log(err); 
@@ -64,16 +61,26 @@ The following shows how to get all the content types from a specifiec list
 var getContentTypes = function(list){
     var sp = buildSharePoint();
     
-    sp.getContentTypes(list).then(function(result){
-        result.results.forEach(function(r){
-            console.log(r.Name); 
-            console.log(r.StringId);
-        });
+    sp.getContentTypes(list, ['Name', 'StringId']).then(function(result){
+        console.log(result);
     }, function(err){
         console.log(err); 
     });
 }
-getContentTypes('invoices');
+
+/* 
+The following shows how to get a content types columns by getting the content type id using a list name
+*/
+var getContentTypeColumns = function(list, id){
+    var sp = buildSharePoint();
+    
+    sp.getContentTypeColumns(list, id).then(function(result){
+        console.log(result);
+    }, function(err){
+        console.log(err); 
+    });
+}
+
 
 /*
 The following example shows how to upload a file to a sharepoint document library with metadata attached. 
