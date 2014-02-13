@@ -34,12 +34,13 @@ The following shows how to get information for a list. Returns all information a
 var getListInfo = function(list){
     var sp = buildSharePoint();
     
-    sp.getListInfoByTitle(list).then(function(result){
-        console.log(result);
+    sp.getListInfo(list, ['ListItemEntityTypeFullName']).then(function(result){
+        console.log(result.ListItemEntityTypeFullName);
     }, function(err){
         console.log(err); 
     });
 };
+getListInfo('Invoices');
 
 /*
 The following shows how to get all items in a list. Returns all information available for each item.
