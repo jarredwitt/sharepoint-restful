@@ -110,7 +110,7 @@ var addItemWithFile = function () {
     //We start by reading our file stream
     fs.readFile(file, function (err, data) {
         //We get the ListItemEntityTypeFullName for the list - All methods return a promise
-        sp.getListInfoByTitle(list).then(function (result) {
+        sp.getListInfo(list, ['ListItemEntityTypeFullName']).then(function (result) {
             var entityType = result.ListItemEntityTypeFullName;
             
             //create our new item metadata
