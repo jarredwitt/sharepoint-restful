@@ -5,6 +5,8 @@ Provides an easy way to work with the SharePoint REST API from node. Only works 
 
 Every operation returns a promise.
 
-Examples are somewhat hard to show for this but I have provided an examples.js that shows how to upload a document. I will be providing some better examples here in the future once the code gets a little more ironed out so please check back or file an issue if you need some help. 
+### Update
+
+I am currently doing a lot of work on this project at the moment and will be pushing it to github within the next week. there will be a more robust example that has an actual GUI so that examples can be run a bit easier. Stay tuned.
 
 
