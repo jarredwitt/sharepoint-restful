@@ -7,6 +7,6 @@ Every operation returns a promise.
 
 ### Update
 
-I am currently doing a lot of work on this project at the moment and will be pushing it to github within the next week. there will be a more robust example that has an actual GUI so that examples can be run a bit easier. Stay tuned.
+I am currently doing a lot of work on this project at the moment and will be pushing it to github within the next week. There will be a more robust example that has an actual GUI so that examples can be run a bit easier. Stay tuned.
 
 
