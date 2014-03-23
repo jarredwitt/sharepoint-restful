@@ -40,7 +40,7 @@ var getListInfo = function(list){
         console.log(err); 
     });
 };
-getListInfo('Invoices');
+
 
 /*
 The following shows how to get all items in a list. Returns all information available for each item.
