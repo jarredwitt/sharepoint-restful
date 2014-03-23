@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        .container{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Get All Lists -->
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">Get All Lists</div>
+            <div class="panel-body">
+                <div class="col-md-4">
+                    <p>This example loads all the lists from the SharePoint site</p>
+                    <div class="form-group">
+                        <button id="btnGetAllLists" class="btn btn-primary form-control">Go</button>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Results</label>
+                        <textarea id="txtGetAllListsResult" class="form-control" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Get List Info -->
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">Get List Info</div>
+            <div class="panel-body">
+                <div class="col-md-4">
+                    <p>This example gets the info for a specific list</p>
+                    <div class="form-group">
+                        <label>List Name</label>
+                        <input id="txtListInfoList" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <button id="btnGetListInfo" class="btn btn-primary form-control">Go</button>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Results</label>
+                        <textarea id="txtGetListInfoResult" class="form-control" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Get List Items -->
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">Get List Items</div>
+            <div class="panel-body">
+                <div class="col-md-4">
+                    <p>This example gets all of the items from a specific list. <b>Please note that this only returns the top 100 items.</b> This is a default for SharePoint. If you want more or less just add a
+                    an itemCount to the getListItems method. Please refer to the server.js for details.</p>
+                    <div class="form-group">
+                        <label>List Name</label>
+                        <input id="txtListItemsList" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <button id="btnGetListItems" class="btn btn-primary form-control">Go</button>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Results</label>
+                        <textarea id="txtGetListItemsResult" class="form-control" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
