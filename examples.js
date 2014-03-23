@@ -34,7 +34,7 @@ The following shows how to get information for a list. Returns all information a
 var getListInfo = function(list){
     var sp = buildSharePoint();
     
-    sp.getListInfo(list, ['ListItemEntityTypeFullName']).then(function(result){
+    sp.getListInfo(list).then(function(result){
         console.log(result.ListItemEntityTypeFullName);
     }, function(err){
         console.log(err); 
@@ -48,7 +48,7 @@ The following shows how to get all items in a list. Returns all information avai
 var getListItems = function(list){
     var sp = buildSharePoint();
     
-    sp.getListItems(list, ['Bolo_x0020_Id']).then(function(result){
+    sp.getListItems(list]).then(function(result){
         console.log(result);
     }, function(err){
         console.log(err); 
@@ -110,7 +110,7 @@ var addItemWithFile = function () {
     //We start by reading our file stream
     fs.readFile(file, function (err, data) {
         //We get the ListItemEntityTypeFullName for the list - All methods return a promise
-        sp.getListInfoByTitle(list).then(function (result) {
+        sp.getListInfo(list).then(function (result) {
             var entityType = result.ListItemEntityTypeFullName;
             
             //create our new item metadata
