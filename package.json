@@ -4,16 +4,12 @@
   "version": "0.0.1",
   "author": "Jarred Witt",
   "description": "a simple sharepoint REST api helper",
-  "bin": {},
-  "scripts": {},
   "main": "./lib/SharePoint",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/jarredwitt/sharepoint-restful.git"
   },
-  "keywords": [],
-  "dependencies": {},
-  "analyze": false,
+  "keywords": ['SharePoint],
   "devDependencies": {
     "rsvp": "~2.0.4",
     "require": "~0.5.0",
@@ -22,6 +18,5 @@
     "jsonml": "0.0.4",
     "express": "~3.5.0"
   },
-  "bundledDependencies": [],
   "license": "MIT"
 }
