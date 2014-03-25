@@ -1,7 +1,7 @@
 {
   "name": "sharepoint-restful",
   "preferGlobal": true,
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "Jarred Witt",
   "description": "a simple sharepoint REST api helper",
   "main": "./lib/SharePoint",
@@ -9,8 +9,8 @@
     "type": "git",
     "url": "https://github.com/jarredwitt/sharepoint-restful.git"
   },
-  "keywords": ['SharePoint],
-  "devDependencies": {
+  "keywords": "Sharepoint",
+  "dependencies": {
     "rsvp": "~2.0.4",
     "require": "~0.5.0",
     "request": "~2.30.0",
