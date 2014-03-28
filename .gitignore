@@ -1,5 +1,7 @@
 *.pdf
-.idea/
+.idea
+./idea/workspace.xml
+config.js
 #################
 ## Node
 #################
