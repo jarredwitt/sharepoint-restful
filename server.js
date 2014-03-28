@@ -30,7 +30,7 @@ app.get('/getAllLists', function(req, res){
     sp.getAllLists(['Title', 'ItemCount', 'Id']).then(function(result){
         res.send(result);
     }, function(err){
-        res.send(err);
+        res.send(500, err);
     });
 });
 
@@ -45,7 +45,7 @@ app.get('/getListInfo', function(req, res){
     sp.getListInfo(list).then(function(result){
         res.send(result);
     }, function(err){
-        res.send(err);
+        res.send(500, err);
     });
 });
 
@@ -60,7 +60,18 @@ app.get('/getListItems', function(req, res){
     sp.getListItems(list, ['Title']).then(function(result){
         res.send(result);
     }, function(err){
-        res.send(err);
+        res.send(500, err);
+    });
+});
+
+app.get('/getListContentTypes', function(req, res){
+    var list = req.query.list;
+    var sp = buildSharePoint();
+
+    sp.getContentTypes(list, ['Name', 'StringId']).then(function(result){
+        res.send(result);
+    }, function(err){
+        res.send(500, err);
     });
 });
 
